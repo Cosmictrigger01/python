@@ -17,8 +17,8 @@ def find_files_and_folders():
                     opened_file = (data.read())
                     index = (opened_file.find(search_string))
 
-                    #If the string was found (-1 means not found) print out the index of the string and the path
-                    #Then print out the search_string at index position and however much "length" after it
+                    #Prints out the found string + everything after it(to the specified length) at the index and file path it was found at
+                    #Index gets incremented by one to ensure that multiple occurences in a single file get found
                     while index != -1:
                         print("Found at index: " + str(index) + " | At path: " + file_path + " | String: " + opened_file[index:index + len(search_string) + length])
                         index = opened_file.find(search_string, index + 1)
